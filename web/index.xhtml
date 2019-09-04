@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <title>#{msgs.title}</title>
+    </h:head>
+    <h:body>
+        <h:form>
+        <h:panelGrid columns="3">
+                #{msgs.name}
+                <h:inputText id="name" label="#{msgs.name}" 
+                             value="#{infoBean.name}" required="true"
+                             requiredMessage="#{msgs.nameRequired}">
+                    
+                      </h:inputText>
+             <h:message for="name" style="color:red"/>
+                #{msgs.password}
+           <h:inputSecret id="password" label="#{msgs.password}" value="#{infoBean.password}"
+                  required="true" requiredMessage="#{msgs.passRequired}">
+               
+           </h:inputSecret>
+             <h:message for="password" style="color:red"/>
+        </h:panelGrid>
+            
+            <h:commandButton value="#{msgs.process}" action="result"/>
+            <h:commandButton value="#{msgs.cancel}" action="canceled"/>
+        </h:form>
+    </h:body>
+</html>
+
